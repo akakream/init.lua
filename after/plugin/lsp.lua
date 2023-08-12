@@ -9,14 +9,16 @@ lsp.ensure_installed({
   'solargraph',
   'pyright',
   'html',
+  'tailwindcss',
 })
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
 
 local util = require 'lspconfig/util'
+local nvim_lsp = require "lspconfig"
 
-require'lspconfig'.pyright.setup{
+nvim_lsp.pyright.setup{
   root_dir = function(filename)
     return util.root_pattern('.git')(filename) or util.path.dirname(filename)
   end

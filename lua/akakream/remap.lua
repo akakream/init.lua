@@ -48,3 +48,6 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+vim.keymap.set("n", "<leader>bt", "<cmd>NvimTreeResize 80<CR>");
+vim.keymap.set("n", "<leader>nt", "<cmd>NvimTreeResize 30<CR>");

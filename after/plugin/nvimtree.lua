@@ -17,4 +17,12 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = false,
   },
+  on_attach = function(bufnr)
+    local api = require "nvim-tree.api"
+    -- default mappings
+    api.config.mappings.default_on_attach(bufnr)
+
+    -- custom mappings
+    vim.keymap.set('n', '<leader>ft', api.tree.find_file)
+  end
 })

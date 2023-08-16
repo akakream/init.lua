@@ -6,7 +6,6 @@ lsp.ensure_installed({
   'tsserver',
   'eslint',
   'gopls',
-  'solargraph',
   'pyright',
   'html',
   'tailwindcss',
@@ -22,6 +21,22 @@ nvim_lsp.pyright.setup{
   root_dir = function(filename)
     return util.root_pattern('.git')(filename) or util.path.dirname(filename)
   end
+}
+
+nvim_lsp.solargraph.setup{
+  cmd = { os.getenv( "HOME" ) .. "/.rbenv/shims/solargraph", "stdio" },
+  root_dir = nvim_lsp.util.root_pattern("Gemfile", ".git", "."),
+    settings = {
+      solargraph = {
+        autoformat = true,
+        completion = true,
+        diagnostic = true,
+        folding = true,
+        references = true,
+        rename = true,
+        symbols = true
+      }
+    }
 }
 
 local cmp = require('cmp')

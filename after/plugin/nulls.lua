@@ -15,6 +15,7 @@ null_ls.setup({
         }),
         null_ls.builtins.diagnostics.ruff,
         null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.sql_formatter,
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

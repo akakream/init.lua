@@ -55,5 +55,6 @@ use {
     requires = 'nvim-tree/nvim-web-devicons'
 }
 use('jose-elias-alvarez/null-ls.nvim')
+use('github/copilot.vim')
 
 end)
